@@ -1,0 +1,98 @@
+#
+# Copyright (c) 2002-2006 Silicon Graphics, Inc.  All Rights Reserved.
+#
+# include/builddefs.  Generated from builddefs.in by configure.
+#
+
+ifndef _BUILDDEFS_INCLUDED_
+_BUILDDEFS_INCLUDED_ = 1
+
+DEBUG = -DNDEBUG
+OPTIMIZER = -g -O2
+MALLOCLIB = 
+LOADERFLAGS = -Wl,-Bsymbolic-functions -Wl,-z,relro
+
+LIBACL = $(TOPDIR)/libacl/libacl.la
+LIBATTR = -lattr
+LIBMISC = $(TOPDIR)/libmisc/libmisc.la
+
+prefix = /
+exec_prefix = /
+top_builddir = ..
+datarootdir = ${prefix}/share
+
+PKG_NAME	= acl
+PKG_USER	= root
+PKG_GROUP	= root
+PKG_RELEASE	= 1
+PKG_VERSION	= 2.2.52
+PKG_PLATFORM	= linux
+PKG_DISTRIBUTION= debian
+PKG_BIN_DIR	= /usr/bin
+PKG_SBIN_DIR	= /bin
+PKG_LIB_DIR	= /lib/x86_64-linux-gnu
+PKG_DEVLIB_DIR	= /usr/lib
+PKG_INC_DIR	= /usr/include
+PKG_MAN_DIR	= /usr/share/man
+PKG_DOC_DIR	= /usr/share/doc/acl
+PKG_LOCALE_DIR	= /usr/share/locale
+
+CC		= gcc
+AWK		= /usr/bin/awk
+SED		= /bin/sed
+TAR		= /bin/tar
+ZIP		= /bin/gzip
+MAKE		= /usr/bin/make
+ECHO		= /bin/echo
+SORT		= /usr/bin/sort
+LN_S		= ln -s
+SHELL		= /bin/sh
+LIBTOOL		= $(SHELL) $(top_builddir)/libtool
+MAKEDEPEND	= /bin/true
+
+MSGFMT		= /usr/bin/msgfmt
+MSGMERGE	= /usr/bin/msgmerge
+XGETTEXT	= /usr/bin/xgettext
+
+RPM		= 
+RPMBUILD	= 
+RPM_VERSION	= 0
+
+ENABLE_SHARED	= yes
+ENABLE_GETTEXT	= yes
+
+HAVE_ZIPPED_MANPAGES = false
+
+ifneq "$(findstring $(PKG_PLATFORM), linux gnu gnu/kfreebsd gnu/knetbsd)" ""
+PCFLAGS = -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64
+endif
+
+ifeq ($(PKG_PLATFORM),linux)
+DEPENDFLAGS = -D__linux__
+endif
+ifeq ($(PKG_PLATFORM),darwin)
+DEPENDFLAGS = -D__APPLE__
+endif
+ifeq ($(PKG_PLATFORM),irix)
+DEPENDFLAGS = -D__sgi__
+endif
+ifeq ($(PKG_PLATFORM),freebsd)
+DEPENDFLAGS = -D__FreeBSD__
+endif
+
+GCFLAGS = $(OPTIMIZER) $(DEBUG) -funsigned-char -fno-strict-aliasing -Wall \
+	  -DVERSION=\"$(PKG_VERSION)\" -DLOCALEDIR=\"$(PKG_LOCALE_DIR)\"  \
+	  -DPACKAGE=\"$(PKG_NAME)\" -I$(TOPDIR)/include
+
+# Global, Platform, Local CFLAGS
+CFLAGS += $(GCFLAGS) $(PCFLAGS) $(LCFLAGS)
+
+include $(TOPDIR)/include/buildmacros
+
+endif
+
+#
+# For targets that should always be rebuilt,
+# define a target that is never up-to-date.
+# Targets needing this should depend on $(_FORCE)
+_FORCE = __force_build

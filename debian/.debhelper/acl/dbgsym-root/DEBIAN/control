@@ -1,0 +1,13 @@
+Package: acl-dbgsym
+Source: acl
+Version: 2.2.52-3
+Auto-Built-Package: debug-symbols
+Architecture: amd64
+Maintainer: Anibal Monsalve Salazar <anibal@debian.org>
+Installed-Size: 92
+Depends: acl (= 2.2.52-3)
+Section: debug
+Priority: extra
+Homepage: http://savannah.nongnu.org/projects/acl/
+Description: Debug symbols for acl
+Build-Ids: 79709a914121b4e2d4159000491d426f766a6533 afbdccbbac578afcf11c3cb966778ce13f2e84d2 d475f199b214e6f0e9ef747de6b5cc304009d1d0

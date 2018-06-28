@@ -1,0 +1,14 @@
+Package: libacl1-dbgsym
+Source: acl
+Version: 2.2.52-3
+Auto-Built-Package: debug-symbols
+Architecture: amd64
+Maintainer: Anibal Monsalve Salazar <anibal@debian.org>
+Installed-Size: 61
+Depends: libacl1 (= 2.2.52-3)
+Section: debug
+Priority: extra
+Multi-Arch: same
+Homepage: http://savannah.nongnu.org/projects/acl/
+Description: Debug symbols for libacl1
+Build-Ids: 182432d8bcdd529dadbc810e7916522e275a2c6a

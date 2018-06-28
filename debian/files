@@ -1,0 +1,6 @@
+acl-dbgsym_2.2.52-3_amd64.deb debug extra
+acl_2.2.52-3_amd64.buildinfo utils optional
+acl_2.2.52-3_amd64.deb utils optional
+libacl1-dbgsym_2.2.52-3_amd64.deb debug extra
+libacl1-dev_2.2.52-3_amd64.deb libdevel extra
+libacl1_2.2.52-3_amd64.deb libs required

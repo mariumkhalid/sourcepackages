@@ -1,0 +1,13 @@
+Package: acl
+Version: 2.2.52-3
+Architecture: amd64
+Maintainer: Anibal Monsalve Salazar <anibal@debian.org>
+Installed-Size: 199
+Depends: libacl1 (= 2.2.52-3), libattr1 (>= 1:2.4.46-8), libc6 (>= 2.14)
+Section: utils
+Priority: optional
+Multi-Arch: foreign
+Homepage: http://savannah.nongnu.org/projects/acl/
+Description: Access control list utilities
+ This package contains the getfacl and setfacl utilities needed for
+ manipulating access control lists.
